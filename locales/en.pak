@@ -1,0 +1,10 @@
+  {
+    speech: {
+    "errorApi": "No Netatmo devices found in the API response.",
+    "good": "The air in the house is clean.",
+    "middle": "The air is starting to get worse, remember to ventilate.",
+    "bad": "Be careful, the CO2 is high, we need to ventilate now.",
+    "text": "$$, Temperature $$ degrees, humidity is $$",
+    "errorAccess": "Unable to recover Netatmo data."
+  }
+}

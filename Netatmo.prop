@@ -1,0 +1,21 @@
+{
+  "modules": {
+    "Netatmo": {
+      "version": "1.0",
+      "name": "netatmo",
+
+      "client_id": "6a192826f9d259d8ca079XXX",
+      "client_secret": "edd1go1y1zohTB2NFh8hh32MPac8UXXX",
+
+      "access_token": "58fdef82e8ede1bc8d8bb466|b5a3deeabe7a5a4a9fa4d36f1ab9XXXX",
+      "refresh_token": "58fdef82e8ede1bc8d8bb466|8eb3da1a0aacc34d5f389c335a47XXXX",
+
+      "device_id": "70:ee:50:91:XX:XX",
+
+      "rules": {
+        "getAir": ["comfort home","comfort * (home|house)","house comfort"]
+      }
+    }
+  }
+}
+			
