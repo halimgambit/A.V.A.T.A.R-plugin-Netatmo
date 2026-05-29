@@ -20,6 +20,7 @@ The Netatmo plugin is fully multi-room.
 The Netatmo plugin relies solely on the system's available languages.
 
 
+
  <table style="border: none;">
   <tr>
     <td style="border: none;"><img src="Netatmo/assets/images/Netatmo.png" alt="Netatmo Logo" width="120"></td>
