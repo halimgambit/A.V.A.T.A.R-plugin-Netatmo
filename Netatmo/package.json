@@ -1,0 +1,12 @@
+{
+    "name": "Netatmo",
+    "version": "1.0.0",
+    "type": "module",
+    "description": "Plugin Netatmo for A.V.A.T.A.R",
+    "repository": "https://github.com/YOUR-REPOSITORY",
+    "keywords": [
+        "Netatmo"
+    ],
+    "author": "YOUR-NAME",
+    "license": "mit"
+  }
