@@ -1,4 +1,7 @@
 # Netatmo
+
+Netatmo home coach, NetatmoConnect
+
 NetatmoHome vous donne le pouvoir de surveiller l'environnement de votre maison
 
 This plugin is an add-on for the [A.V.A.T.A.R](https://avatar-home-automation.github.io/docs) framework.
