@@ -82,7 +82,7 @@ Avatar.speak(L.get("speech.text", text, d.Temperature, d.Humidity), client, () =
     }
 };
 
-function analyzeAir(d) {
+const analyzeAir = (d) => {
 
     const co2 = d.CO2;
     const temp = d.Temperature;
