@@ -9,7 +9,7 @@ This plugin is an add-on for the [A.V.A.T.A.R](https://avatar-home-automation.gi
 🎯 Usage
 Commandes :
 
-le comfort de la maison.
+le comfort de la maison, la temperature de la maison
 
 creer une app ici : https://dev.netatmo.com/apidocumentation/general
 
