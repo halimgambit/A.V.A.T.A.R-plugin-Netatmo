@@ -1,10 +1,12 @@
   {
     "speech": {
+    "errorToken": "Impossible de rafraîchir le token.",
+    "errorFile": "Netatmo : Erreur lors de la sauvegarde du fichier de config.",
     "errorApi": "Aucun appareil Netatmo trouvé dans la réponse de l'API.",
     "good": "L’air est sain dans la maison.",
     "middle": "L’air commence à se dégrader, pensez à aérer.",
     "bad": "Attention, le CO2 est élevé, il faut aérer maintenant.",
-    "text": "$$, Température $$ degrés, l'humidité est $$",
+    "text": "$$, la température est de $$ degrés, et l'humidité est à $$ pourcent.",
     "errorAccess": "Impossible de récupérer les données Netatmo."
   }
 }
