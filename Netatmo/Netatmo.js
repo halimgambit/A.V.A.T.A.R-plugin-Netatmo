@@ -10,20 +10,22 @@ export async function init () {
 }
 
 export async function action(data, callback) {
+
     try {
+
         const L = await Avatar.lang.getPak('Netatmo', data.language);
 
         const tblActions = {
-            getAir: () => getAirQuality(data.client, L, callback)
+            getComfort: () => getComfort(data.client, L, callback)
         };
 
-        info("Netatmo:", data.action.command, "plugin.from", data.client);
+        info("Netatmo:", data.action.command, "from", data.client);
 
         if (tblActions[data.action.command]) {
-            await tblActions[data.action.command]();
-        } else {
-            callback();
-        }
+                await tblActions[data.action.command]();
+            } else {
+                callback();
+            }
 
     } catch (err) {
         if (data.client) Avatar.Speech.end(data.client);
@@ -80,13 +82,13 @@ const refreshNetatmoToken = async (L) => {
 };
 
 
-const getAirQuality = async (client, L, callback, isRetry = false) => {
+const getComfort = async (client, L, callback, isRetry = false) => {
+    
     try {
+
         const cfg = Config.modules.Netatmo;
 
-        const res = await fetch(
-            `https://api.netatmo.com/api/gethomecoachsdata?device_id=${cfg.device_id}`,
-            {
+        const res = await fetch(`https://api.netatmo.com/api/gethomecoachsdata?device_id=${cfg.device_id}`, {
                 headers: {
                     Authorization: `Bearer ${cfg.access_token}`
                 }
@@ -95,7 +97,7 @@ const getAirQuality = async (client, L, callback, isRetry = false) => {
 
         if ((res.status === 401 || res.status === 403) && !isRetry) {
             await refreshNetatmoToken(L);
-            return getAirQuality(client, L, callback, true);
+            return getComfort(client, L, callback, true);
         }
 
         const json = await res.json();
@@ -103,7 +105,7 @@ const getAirQuality = async (client, L, callback, isRetry = false) => {
         if (json.error) {
             if (json.error.code === 2 && !isRetry) { 
                 await refreshNetatmoToken(L);
-                return getAirQuality(client, L, callback, true);
+                return getComfort(client, L, callback, true);
             }
             throw new Error(json.error.message);
         }
@@ -125,14 +127,12 @@ const getAirQuality = async (client, L, callback, isRetry = false) => {
         info(finalSpeech);
 
         Avatar.speak(finalSpeech, client, () => {
-            Avatar.Speech.end(client),
             callback();
         });
 
     } catch (err) {
         error("NETATMO DEBUG:", err.message || err);
         Avatar.speak(L.get("speech.errorAccess"), client, () => {
-            Avatar.Speech.end(client);
             callback();
         });
     }
